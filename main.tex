@@ -1,0 +1,185 @@
+\documentclass{scrartcl}
+
+%Packages
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+\title{Robotronic - TechnicalPaper}
+\author{Elias Braun, Noah Zeller, Dario Woll, Jonas Schaz}
+\date{May 2023}
+
+\begin{document}
+
+
+%Crate Start Page with Heading and Picture of Robots
+\maketitle
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{img/Robotronic-Robots.JPEG}
+    \caption{Robots - German Open 2023}
+    \label{fig:robots}
+\end{figure}
+\newpage
+
+%Create table of contents for the whole Documents
+\tableofcontents
+\newpage
+
+%Introducing Team and abstract things
+\section{Introduction}
+
+\subsection{Team}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{img/Robotronic.jpg}
+    \caption{Team Robotronic - Dario Woll, Jonas Schaz, Elias Braun, Noah Zeller}
+    \label{fig:team}
+\end{figure}
+In our Team, everyone has a specific task to do.
+\begin{enumerate}
+    \item{Dario Woll: Software $\rightarrow$ Calibration \& StepUp Design}
+    \item{Jonas Schaz: Software  $\rightarrow$ Ball Tracking, Mouse Sensor}
+    \item{Elias Braun: Hardware $\rightarrow$ Robot}
+    \item{Noah Zeller: Software $\rightarrow$ Compass, Camera}
+\end{enumerate}
+\newpage
+
+\subsection{School}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{img/LGNU.jpg}
+    \caption{Lessing Gymnasium Neu-Ulm - German Open}
+    \label{fig:LGNU}
+\end{figure}
+
+The Robotics program of our school was created 2011. Since then, we managed to win the World Open
+multiple times in either Soccer LightWeight, Soccer Open or OnStage.
+We try to put our new Teams as fast as possible in the top leagues. With the gathered experience, we always
+have teams to follow our footsteps.
+\newline
+
+
+\subsection{Abstract}
+We are a Team of four students from the Lessing Gymnasium Neu-Ulm in Germany. Furthermore, we founded our Team
+in 2018 and first participated in the RoboCup Junior in 2019. Robotic is a big part of our daily life.
+We meet on school days and even on weekends and Holidays.
+\newline
+\newline
+We started developing our Robots in mid 2022 and had a first Prototype in late 2022. After final design
+choices, we had our Robots for the South-Open in early 2023. From this point on, not much progress was
+made in the Hardware sector.
+After a lot of programming, we managed to reach the second place.
+\newline
+After the South-Open we redesigned the Top Part of the Robot. We discovered, that with two cameras
+instead of one we would have more opportunities in software instead of one camera and ultrasonic sensors.
+With these improvements we managed to win the German Open.
+
+\section{Development \& Testing}
+
+\subsection{Development}
+Due to the pandemic we weren't able to get much experience. In 2022 we had our first real RoboCup
+in the LightWeight International League. With this experience we started to design the 2023 Robot.
+\newline
+The design of our robots aims to be as rigid as possible, while keeping the robot light.
+To achieve this goal, we used Carbon and 3D printed Parts in combination with thin circuit boards.
+In combination with our Software, we are able to travel with high speeds to the ball and
+hit a goal.
+
+\subsection{Mechanical Design}
+All our parts were designed using 'Autodesk Inventor 2023 Professional' and 'Autodesk Eagle 9.6.2'.
+Most of our parts are printed with our Prusa MK3S+ and the Carbon rings are CNC-Machined
+with our self build CNC-Machine.
+\newline
+\newline
+
+\begin{wrapfigure}{r}{4cm}
+    \centering
+    \includegraphics[width=1\linewidth]{img/inv/OmniWheel.jpg}
+    \caption{Omniwheels}
+    \label{fig:OmniWheels}
+\end{wrapfigure}
+
+The whole design aims to be fast, reliable and robust. To achieve this goal, we put all the force
+into two Carbon Rings. Carbon Fiber has a high strength and low weight.
+\newline
+Traveling with high speeds, while being strong is also a huge challenge. To achieve this, we use high quality
+Maxon DC Motors in combination with the VNH3SP30 driver chip. To put the force on the ground, we designed
+new Omniwheels~\ref{fig:OmniWheels}.
+The OmniWheel consists of two independent aluminum pieces screwed together. For the small wheels we use a small
+aluminum piece covered with an O-Ring out of NBR plastic.
+\newline
+To protect this whole construction from the opponent robot, everything is moved 1.5 cm into the robot and a 3D
+printed protector covers the whole inner side of the robot.
+\newpage
+
+\subsection{Electrical Design}
+To detect various elements and control the whole robot we use a Teensy 4.1 microcontroller. All electronic
+parts are soldered to circuit boards.
+\newline
+We have a total of four Circuit Boards:
+\begin{enumerate}
+    \item{Line Detection PCB}
+    \item{Step Up PCB}
+    \item{Controller PCB}
+    \item{Infrared Seeker PCB}
+\end{enumerate}
+Each Circuit Board has a predetermined task and all the above are controlled by the Teensy 4.1.
+
+We order our Circuit Boards from a local company and solder the parts on the boards.
+
+\subsubsection{Line Detection PCB}
+
+\begin{wrapfigure}{r}{4cm}
+    \centering
+    \includegraphics[width=0.75\linewidth]{img/eagle/LineDedectionPCB.png}
+    \caption{PCB}
+    \label{fig:LDPCB}
+\end{wrapfigure}
+
+The Line Detection PCB consists of a circle and a cross of phototransistor pairs. To connect all
+48 sensors to our main controller, we use analog multiplexer. The multiplexers are switched parallel
+to save ports.
+\newline
+As you can see on the right, we use pairs of two phototransistors and one led. We found out, this is the 
+best way to detect the line.
+
+\subsubsection{Step Up PCB}
+
+\subsubsection{Controller PCB}
+
+\subsubsection{Infrared Seeker PCB}
+
+
+\subsection{Software} %hier muss noch UNDBEDINGT, zwischen Torwart und Stürmer unterschieden werden.
+As we all know, that's the objective:
+\begin{enumerate}
+    \item{Approach the ball quickly and precisely to get it into the ball pit.}
+    \item{Aim for the goal as quickly as possible.}
+    \item{Score as fast as possible.}
+\end{enumerate}
+Accordingly, a modularization of the code can be set up.
+
+\subsubsection{Ball approach}
+Jonas took on this task. His idea was to set up an imaginary approach circle around the ball, which is then approached tangentially. The speed is to be controlled in the process. On the one hand, with the distance to the ball and the targeted distance of the radius of the imaginary circle. On the other hand, with the angle, whereby the aim is to place the robot exactly behind the ball. The output of the PID controllers was transferred to the motor formula with a convex combination via the distance to the ball.
+
+If the ball is now in front of the robot, it is driven straight ahead until the ball is registered in the ball pit with the light barrier. Then the next module is activated.
+
+\subsubsection{Aiming at the goal}
+
+\subsubsection{Shot}
+
+\section{Experience 2023}
+
+\section{Improvements for 2024}
+
+\subsection{Mechanical \& Electrical Design}
+
+\subsection{Software}
+
+
+
+
+\end{document}
