@@ -1,2 +1,3 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe Electrical Design consists out of four circuit boards: LineDedection Board StepUp Boards Controller Board\\E$"}
 {"rule":"SINGULAR_AGREEMENT_SENT_START","sentence":"^\\QThe multiplexer are switched paralell\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QFor on the way debug, we have a total of eight small SMD-LED´s on our circuit board.\\E$"}
