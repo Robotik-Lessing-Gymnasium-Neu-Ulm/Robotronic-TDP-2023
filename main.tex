@@ -106,13 +106,13 @@ into two Carbon Rings. Carbon Fiber has a high strength and low weight.
 \newline
 Traveling with high speeds, while being strong is also a huge challenge. To achieve this, we use high quality
 Maxon DC Motors in combination with the VNH3SP30 driver chip. To put the force on the ground, we designed
-new Omniwheels~\ref{fig:OmniWheels}.
+new Omniwheels.
 The OmniWheel consists of two independent aluminum pieces screwed together. For the small wheels we use a small
 aluminum piece covered with an O-Ring out of EPDM plastic.
 \newline
 To protect this whole construction from the opponent robot, everything is moved 1.5 cm into the robot and a 3D
 printed protector covers the whole inner side of the robot.
-\newpage
+\newline
 
 \subsection{Electrical Design}
 To detect various elements and control the whole robot we use a Teensy 4.1 microcontroller. All electronic
@@ -146,7 +146,7 @@ As you can see on the right, we use pairs of two phototransistors and one led. W
 best way to detect the line.
 
 \subsubsection{Step Up PCB}
-\ref{PCB:SU} Because a simple solenoid with 12V isn´t strong enough, we use an selfmade 
+\ref{PCB:SU} Because a simple solenoid with 12V isn't strong enough, we use a selfmade 
 StepUp converter. It consists of a controller and a coil to convert the 12V
 to 48V - the maximum allowed.
 \newline
@@ -165,7 +165,7 @@ mouse sensor over SPI. The Teensy 4.1 controls our motors, reads the values from
 handled by the Teensy 4.1. 
 \newline
 As you can see on the right~\ref{fig:CPCB}, the power management is also done on the controller PCB.
-\newpage
+\newline
 
 For on the way debug, we have a total of eight small SMD-LED´s on our circuit board.
 Each is light up, if an specific condition is reached.
@@ -205,6 +205,7 @@ The TSSP4038 are the most commonly used IR sensors in the RoboCup Junior LightWe
 league. But instead of using the direct output, we convert it to an analog signal
 With this method, we can detect an approximate distance to the ball. Our total speed
 depends on this distance, as closer we get, the slower we drive, to enhance the accuracy. 
+\newline 
 
 \subsection{Software} %hier muss noch UNDBEDINGT, zwischen Torwart und Stürmer unterschieden werden.
 As we all know, that's the objective:
@@ -228,10 +229,10 @@ If the ball is now in front of the robot, it is driven straight ahead until the 
 
 \section{Improvements for 2024}
 Due to the success in Germany, the motivation for the next year is huge. So we already discussed
-many improvements for next year. 
+many improvements for the upcoming year. 
 
 \subsection{Mechanical \& Electrical Design}
-In our opinion, a design with multiple circuit boards, who are directly connected is the way to go. So next year, we will have more than ten  
+
 
 \subsection{Software}
 

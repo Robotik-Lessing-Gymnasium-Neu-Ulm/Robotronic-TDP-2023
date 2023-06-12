@@ -10,3 +10,9 @@ Prusa
 phototransistor
 phototransistors
 interchained
+Robotronic
+TechnicalPaper
+Zeller
+Woll
+Schaz
+EPDM
