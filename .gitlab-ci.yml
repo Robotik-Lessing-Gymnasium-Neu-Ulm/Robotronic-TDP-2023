@@ -20,8 +20,6 @@ upload_docat:
   image: alpine:latest 
   dependencies: 
     - build_latex
-  only: 
-    - main
   script:
     - apk update
     - apk add curl
