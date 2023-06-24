@@ -8,6 +8,19 @@
     \label{fig:LGNU}
 \end{figure}
 
+\makeatletter
+\providecommand{\rowno}[1][__empty__]{%
+\ifthenelse{\isundefined{\c@rowno}}{%
+\newcounter{rowno}}{}%
+\ifthenelse{\equal{#1}{__empty__}}{%
+\stepcounter{rowno}%
+}{%
+\setcounter{rowno}{#1}%
+}%
+\therowno.%
+}
+\makeatother
+
 The Robotics program of our school was created 2011. Since then, we managed to win the World Open
 multiple times in either Soccer LightWeight, Soccer Open or OnStage.
 We try to put our new Teams as fast as possible in top leagues. With the gathered experience, we always
@@ -21,13 +34,21 @@ have teams to follow our footsteps.
     \caption{Team Robotronic - Dario Woll, Jonas Schaz, Elias Braun, Noah Zeller}
     \label{fig:team}
 \end{figure}
-In our Team, everyone has a specific task to do.
-\begin{enumerate}
-    \item{Dario Woll: Software $\rightarrow$ Calibration \& StepUp Design}
-    \item{Jonas Schaz: Software  $\rightarrow$ Ball Tracking, Mouse Sensor}
-    \item{Elias Braun: Hardware $\rightarrow$ Robot}
-    \item{Noah Zeller: Software $\rightarrow$ Compass, Camera}
-\end{enumerate}
+In our Team, everyone has a specific task to do.\\
+
+
+% \begin{enumerate}
+%     \item{Dario Woll: Software $\rightarrow$ Calibration \& StepUp Design}
+%     \item{Jonas Schaz: Software  $\rightarrow$ Ball Tracking, Mouse Sensor}
+%     \item{Elias Braun: Hardware $\rightarrow$ Robot}
+%     \item{Noah Zeller: Software $\rightarrow$ Compass, Camera}
+% \end{enumerate}
+\begin{tabular}[h]{r|c|l}
+    Dario Woll&Software&Calibration \& StepUp Design\\\hline
+    Jonas Schaz&Software&Ball Tracking \& Mouse Sensor\\\hline
+    Elias Braun&Hardware&Robot\\\hline
+    Noah Zeller&Software&Compass \& Camera
+\end{tabular}
 \newpage
 
 \subsection{Abstract}

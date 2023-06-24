@@ -139,10 +139,43 @@ As we all know, that's the objective:
 Accordingly, a modularization of the code can be set up.
 
 \subsubsection{Ball approach}
-Our idea was to set up an imaginary approach circle around the ball, which is then approached tangentially. The speed is to be controlled in the process. On the one hand, with the distance to the ball and the targeted distance of the radius of the imaginary circle. On the other hand, with the angle, whereby the aim is to place the robot exactly behind the ball. The output of the PID controllers was transferred to the motor formula with a convex combination via the distance to the ball.
+Our idea was to set up an imaginary approach circle around the ball, which is then approached tangentially. The speed is to be controlled in the process.
+On the one hand, with the distance tot the ball and the targeted distance of the radius of the imaginary circle.
+On the other hand, with the angle, whereby the aim is to place the robot exactly behind the ball. 
+The output of the PID controllers wa s transferred to the motor formula with a convex combination via the distance to the ball.
 
 If the ball is now in front of the robot, it is driven straight ahead until the ball is registered in the ball pit with the light barrier. Then the next module is activated.
 
 \subsubsection{Aiming at the goal}
+As long as the ball is in the ball pit, the robot aligns itself with the goal and drives up to a suitable shooting position. To prevent \textit{pushing}, the shot is taken as early as possible.
 
 \subsubsection{Shot}
+The standard shot consists of the bolt, which accelerates the ball and is subject to the rules. In conjunction with an aggressive spin, the ball can be catapulted forward much more.
+
+\subsection{Steering with mouse sensor}
+To be able to achieve the above, it is of course inherent to be able to control effectively, robustly and precisely.
+The necessary target/actual comparison is done with the help of a mouse sensor.
+This registers the current speed and the current direction of movement (this is similar to polar coordinates). A PID controller now controls the motors.
+
+\subsection{Ball detection and infrared light}
+For each individual infrared sensor, the pulsing of the ball is integrated over a short period of time and thus the distance is estimated.
+To compensate for hardware differences, the sensors are calibrated to the ball before each game. This calibration is stored and automatically improves over the course of a game. 
+
+The sensor with the shortest distance to the ball then represents the angle to the ball. This is therefore dependent on the placement of the sensors on the robot.
+
+\subsection{Goal detection and camera}
+The distance to the goal is determined by the height of the largest blue/yellow block.
+The angle to the goal, which is aligned with the ball approach and the passive goalkeeper, is the angle to the center of the largest block. 
+
+\subsection{Line detection}
+Automatic calibration of the ground sensors at the beginning of each game lets us react quickly to all lighting conditions. 
+If a phototransistor detects a larger light value than the initially calibrated value, a countersteering vector is passed to the motor formula. 
+This vector depends on the hardware position. This remains even if another sensor detects a line in the near future.
+
+\subsection{Goalkeeper}
+Our storm is more effective when it consists of only one robot. The other one should cover as much area of the goal as possible.
+This goalkeeper moves on his own penalty line and navigates between the ball and the center of the goal, so that either \textit{pushing} is triggered, or a shot is blocked.
+The goalkeeper's offense can be adjusted, as he can decide when to drive on the ball. 
+
+\subsection{Bluetooth}
+An effective goalkeeper change completes our tactics. This is ensured with an economical Bluetooth protocol, so that one robot is always the goalkeeper and the other the striker. 
