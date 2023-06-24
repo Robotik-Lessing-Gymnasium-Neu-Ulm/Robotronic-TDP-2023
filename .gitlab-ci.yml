@@ -5,8 +5,6 @@ stages:
 build_latex:
   stage: build
   image: registry.gitlab.com/islandoftex/images/texlive:latest
-  only:
-    - main
   script:
     - pdflatex main.tex
     - pdflatex main.tex
@@ -22,8 +20,6 @@ upload_docat:
   image: alpine:latest 
   dependencies: 
     - build_latex
-  only: 
-    - main
   script:
     - apk update
     - apk add curl
