@@ -3,9 +3,12 @@
 *.gz
 *.toc
 *.aux
+*.fls 
+*.fdb_latexmk
 /out
 /auxil
 /.idea
+
 
 # Default ignored files
 /shelf/
