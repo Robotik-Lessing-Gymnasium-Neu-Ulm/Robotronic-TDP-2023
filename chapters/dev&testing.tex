@@ -157,25 +157,25 @@ To be able to achieve the above, it is of course inherent to be able to control 
 The necessary target/actual comparison is done with the help of a mouse sensor.
 This registers the current speed and the current direction of movement (this is similar to polar coordinates). A PID controller now controls the motors.
 
-\subsection{Ball detection and infrared light}
+\subsubsection{Ball detection and infrared light}
 For each individual infrared sensor, the pulsing of the ball is integrated over a short period of time and thus the distance is estimated.
 To compensate for hardware differences, the sensors are calibrated to the ball before each game. This calibration is stored and automatically improves over the course of a game. 
 
 The sensor with the shortest distance to the ball then represents the angle to the ball. This is therefore dependent on the placement of the sensors on the robot.
 
-\subsection{Goal detection and camera}
+\subsubsection{Goal detection and camera}
 The distance to the goal is determined by the height of the largest blue/yellow block.
 The angle to the goal, which is aligned with the ball approach and the passive goalkeeper, is the angle to the center of the largest block. 
 
-\subsection{Line detection}
+\subsubsection{Line detection}
 Automatic calibration of the ground sensors at the beginning of each game lets us react quickly to all lighting conditions. 
 If a phototransistor detects a larger light value than the initially calibrated value, a countersteering vector is passed to the motor formula. 
 This vector depends on the hardware position. This remains even if another sensor detects a line in the near future.
 
-\subsection{Goalkeeper}
+\subsubsection{Goalkeeper}
 Our storm is more effective when it consists of only one robot. The other one should cover as much area of the goal as possible.
 This goalkeeper moves on his own penalty line and navigates between the ball and the center of the goal, so that either \textit{pushing} is triggered, or a shot is blocked.
 The goalkeeper's offense can be adjusted, as he can decide when to drive on the ball. 
 
-\subsection{Bluetooth}
+\subsubsection{Bluetooth}
 An effective goalkeeper change completes our tactics. This is ensured with an economical Bluetooth protocol, so that one robot is always the goalkeeper and the other the striker. 
